@@ -13,6 +13,6 @@
 
 ## 消费位置
 
-- **App 内**：`PaywallView.swift`（付费页两链接）+ `AboutView.swift`（关于页两链接）
+- **App 内**：`PaywallView.swift`（付费页底部两链接——订阅披露必需位，App 内唯一入口；关于页入口已按产品决定于 v1.3.136 移除）
 - **App Store Connect**：App 隐私区「隐私政策 URL」= privacy.html；商店页「支持 URL」= support.html
 - 发布历史：2026-10-13 首版上线（方案 C：独立公开仓库 + Pages 默认域，零 DNS / 零备案）
