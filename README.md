@@ -1,18 +1,20 @@
-# Framelet Legal Pages
+# framelet-legal
 
-框影（Framelet，iOS App）App Store 上架用**法务页静态站**，GitHub Pages 托管。
+多 App 共享的法务托管仓库（GitHub Pages 公开站点）。
 
-| 页面 | URL |
-|---|---|
-| 隐私政策 | https://turbobo.github.io/framelet-legal/privacy.html |
-| 服务条款 | https://turbobo.github.io/framelet-legal/terms.html |
-| 支持 | https://turbobo.github.io/framelet-legal/support.html |
+## 结构
 
-> 本仓库**仅含公开发布副本，不含任何 App 源码**（主仓库 `photo-frame-SwiftUI` 保持私有）。
-> 源文件同步自主仓库 `docs/legal/`。修改流程：改主仓库 `docs/legal/` → 同步本仓库 → push（Pages 自动重建）。
+```
+index.html          多 App 法务目录页
+framelet/           框影（隐私政策 / 服务条款 / 支持）
+privacy.html        历史根路径重定向 → framelet/privacy.html
+terms.html          历史根路径重定向 → framelet/terms.html
+support.html        历史根路径重定向 → framelet/support.html
+```
 
-## 消费位置
+## 约定
 
-- **App 内**：`PaywallView.swift`（付费页底部两链接——订阅披露必需位，App 内唯一入口；关于页入口已按产品决定于 v1.3.136 移除）
-- **App Store Connect**：App 隐私区「隐私政策 URL」= privacy.html；商店页「支持 URL」= support.html
-- 发布历史：2026-10-13 首版上线（方案 C：独立公开仓库 + Pages 默认域，零 DNS / 零备案）
+- 每个 App 一个目录（如 `framelet/`），目录内放该 App 的隐私政策、服务条款、支持页。
+- 新 App 上架时：复制 `framelet/` 三页为新目录并改写内容，在根 `index.html` 增加入口卡片。
+- 页面 URL 形如 `https://turbobo.github.io/framelet-legal/<app>/privacy.html`，App Store Connect 中登记该地址即可。
+- 历史根路径保留 meta-refresh 重定向占位，避免旧链接 404。
